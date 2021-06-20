@@ -1,0 +1,32 @@
+doctype html
+html
+  include navbar.pug
+head
+  meta(charset='UTF-8')
+  title= title
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+  style.
+    body { padding-top: 50px; }
+    div #movie ul { 
+          padding: 0px
+        }
+    div #movie ul li {
+          display: inline-block;
+          width: 50%;
+          list-style: outside none none;
+          font-size: 50px;
+        }
+br
+a(href='/genres')
+    button  Back to the genres
+.container
+  ul#movieList
+  each val in movieList
+    li: #movie
+      ul
+        li  #{val.title}
+        li  #{val.id}
+        li  
+          img(src='http://image.tmdb.org/t/p/w500/' + val.poster_path)
+
+

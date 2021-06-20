@@ -1,0 +1,18 @@
+doctype html
+html
+  include navbar.pug
+head
+  meta(charset='UTF-8')
+  title= title
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous')
+  style.
+    body { padding-top: 50px; }
+h2
+  | Below are the Genres
+br
+a(href='/genres')
+    button  Click To see the genres
+.container
+  ul#movieList
+  each val in genresList
+    li: a(href='/genres/' + val.id) #{val.name}
